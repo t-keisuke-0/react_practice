@@ -1,0 +1,66 @@
+{
+    "name": "Next.js Project",
+    "build": {
+      "dockerfile": "Dockerfile",
+      "context": "..",
+      "args": {
+        "USERNAME": "${localEnv:USERNAME}"
+      }
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+            "dbaeumer.vscode-eslint",
+            "esbenp.prettier-vscode",
+            "bradlc.vscode-tailwindcss",
+            "formulahendry.auto-rename-tag",
+            "csstools.postcss",
+            "ms-vscode.vscode-typescript-next",
+            "formulahendry.auto-close-tag",
+            "aaron-bond.better-comments",
+            "alefragnani.Bookmarks",
+            "streetsidesoftware.code-spell-checker",
+            "mhutchie.git-graph",
+            "ecmel.vscode-html-css",
+            "oderwat.indent-rainbow",
+            "VisualStudioExptTeam.vscodeintellicode",
+            "VisualStudioExptTeam.intellicode-api-usage-examples",
+            "Zignd.html-css-class-completion",
+            "xabikos.JavaScriptSnippets",
+            "ms-vscode.live-server",
+            "glenn2223.live-sass",
+            "christian-kohler.path-intellisense",
+            "vscode-icons-team.vscode-icons"
+        ],
+        "settings": {
+          "editor.formatOnSave": true,
+          "[typescript]": {
+            "editor.defaultFormatter": "vscode.typescript-language-features"
+          },
+          "[javascript]": {
+            "editor.defaultFormatter": "vscode.typescript-language-features"
+          },
+          "[typescriptreact]": {
+            "editor.defaultFormatter": "vscode.typescript-language-features"
+          },
+          "[javascriptreact]": {
+            "editor.defaultFormatter": "vscode.typescript-language-features"
+          },
+          "[json]": {
+            "editor.defaultFormatter": "vscode.json-language-features"
+          },
+          "[css]": {
+            "editor.defaultFormatter": "vscode.css-language-features"
+          },
+          "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit"
+          }
+        }
+      }
+    },
+    "forwardPorts": [3000],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+    "workspaceFolder": "/workspace",
+    "remoteUser": "root",
+    "postStartCommand": "./postStartCommand.sh && source .env"
+  }
