@@ -58,5 +58,6 @@
     "forwardPorts": [3000],
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
     "workspaceFolder": "/workspace",
+    "postCreateCommand": "npm init -y && npm install && npx --yes rimraf node_modules/.cache && npm install -g typescript && tsc --init",
     "remoteUser": "root"
   }
