@@ -23,7 +23,7 @@ ENV TZ=Asia/Tokyo
 COPY package*.json ./
 
 # 依存関係のインストール
-RUN volta install node@20 && volta install npm@latest && npm install
+RUN volta install node@18 && volta install npm@latest && npm install
 
 # ソースコードのコピー
 COPY . .
