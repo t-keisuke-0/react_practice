@@ -23,10 +23,16 @@ ENV TZ=Asia/Tokyo
 COPY package*.json ./
 
 # 依存関係のインストール
-RUN volta install node@18 && volta install npm@latest && npm install
+RUN volta install node@18 && npm install
+
+# lint関係のインストール
+RUN npm install -D eslint eslint-config-airbnb eslint-config-airbnb-base
 
 # ソースコードのコピー
 COPY . .
+
+# .eslintrc ファイルをコピー (明示的にコピー)
+COPY .eslintrc /workspace/
 
 # ポートの公開
 EXPOSE 3000
