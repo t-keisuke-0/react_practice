@@ -1,8 +1,8 @@
 console.log('Hello World');
 
-let boolean = true;
+const boolean = true;
 if (boolean) {
   const a = 'aaa';
 }
 
-let helloWorld = 'hhh';
+const helloWorld = 'hhh';

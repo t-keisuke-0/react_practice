@@ -13,8 +13,9 @@
         // "indent": ["error", 2],
         // "quotes": ["error", "single"],
         // "semi": ["error", "always"],
-        // "no-unused-vars": ["warn"],
-        // "camelcase": ["warn"]
+        "no-unused-vars": ["off"],
+        // "camelcase": ["warn"],
+        "linebreak-style": ["off"]
     },
     "extends": ["airbnb-base"]
 }

@@ -26,7 +26,7 @@ COPY package*.json ./
 RUN volta install node@18 && npm install
 
 # lint関係のインストール
-RUN npm install -D eslint eslint-config-airbnb eslint-config-airbnb-base
+RUN npm install -D eslint eslint-config-airbnb eslint-config-airbnb-base && npm i -D prettier && npm install husky --save-dev && npm install husky lint-staged --save-dev
 
 # ソースコードのコピー
 COPY . .
