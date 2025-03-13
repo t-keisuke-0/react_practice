@@ -37,16 +37,16 @@
           "typescriptreact"
         ],
         "eslint.run": "onType",
-        // "editor.codeActionsOnSave": {
-        //   "source.fixAll": true
-        // },
+        "editor.codeActionsOnSave": {
+          "source.fixAll": true
+        },
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": false
+        "editor.formatOnSave": true
       }
     }
   },
   "forwardPorts": [3000],
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
   "workspaceFolder": "/workspace",
-  "remoteUser": "root"
+  "remoteUser": "devuser"
 }

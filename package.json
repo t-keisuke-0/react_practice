@@ -7,13 +7,7 @@
     "dev": "next dev",
     "lint": "eslint app.js",
     "fix": "eslint --fix app.js",
-    "format": "prettier --write app.js",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix"
-    ]
+    "format": "prettier --write app.js"
   },
   "keywords": [],
   "author": "",
@@ -22,8 +16,6 @@
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
     "typescript": "^5.0.0"
   },
