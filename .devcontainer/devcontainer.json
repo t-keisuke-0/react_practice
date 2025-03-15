@@ -46,7 +46,7 @@
     }
   },
   "forwardPorts": [3000],
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
-  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/playground,type=bind,consistency=cached",
+  "workspaceFolder": "/playground",
   "remoteUser": "devuser"
 }
