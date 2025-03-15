@@ -1,27 +1,27 @@
 {
-  "name": "your-project-name",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "next dev",
-    "lint": "eslint app.js",
-    "fix": "eslint --fix app.js",
-    "format": "prettier --write app.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^8.57.1",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "prettier": "^3.5.3",
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "next": "^13.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  }
+    "name": "your-project-name",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "next dev",
+        "lint": "eslint app.js",
+        "fix": "eslint --fix app.js",
+        "format": "prettier --write app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^8.57.1",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "prettier": "^3.5.3",
+        "typescript": "^5.8.2"
+    },
+    "dependencies": {
+        "next": "^13.0.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+    }
 }

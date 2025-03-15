@@ -35,11 +35,23 @@ RUN npm install
 # lint関係のインストール
 RUN npm i -D eslint@8 eslint-config-airbnb eslint-config-airbnb-base prettier
 
+# typescript
+RUN npm install typescript --save-dev && npx tsc --init
+
 # ソースコードのコピー
 COPY . .
 
 # .eslintrc ファイルをコピー (明示的にコピー)
 COPY .eslintrc /workspace/
+
+# 非特権ユーザーの作成
+RUN adduser --disabled-password --gecos "" devuser
+
+# ワークスペースディレクトリの所有者を変更
+RUN chown -R devuser:devuser /workspace
+
+# .gitディレクトリの所有者を変更
+RUN chown -R devuser:devuser /workspace/.git
 
 # ランタイムステージ
 FROM node:20-slim
@@ -58,7 +70,7 @@ ENV TZ=Asia/Tokyo
 # ランタイムステージに必要なファイルのみコピー
 COPY --from=builder /workspace /workspace
 
-# 非特権ユーザーの作成
+# ランタイムステージでdevuserを作成
 RUN adduser --disabled-password --gecos "" devuser
 
 # ワークスペースディレクトリの所有者を変更
