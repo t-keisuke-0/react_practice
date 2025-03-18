@@ -24,7 +24,7 @@ ENV TZ=Asia/Tokyo
 RUN git init
 
 # 依存関係のコピー
-COPY package*.json ./
+COPY package.json yarn.lock ./
 
 # nodeとnpmのインストール
 RUN volta install node@18
@@ -43,9 +43,6 @@ ENV PATH="./node_modules/.bin:$PATH"
 RUN yarn add typescript --dev
 RUN yarn install
 RUN yarn tsc --init
-
-# # create-react-appのインストール
-# RUN yarn global add create-react-app
 
 # ソースコードのコピー
 COPY . .
@@ -75,7 +72,7 @@ WORKDIR /playground
 
 # タイムゾーンを設定
 ENV TZ=Asia/Tokyo
-ENV PUBLIC_URL=./React/public
+ENV CHOKIDAR_USEPOLLING=true
 
 # ランタイムステージに必要なファイルのみコピー
 COPY --from=builder /playground /playground
