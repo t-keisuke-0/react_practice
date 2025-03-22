@@ -31,26 +31,26 @@
 
 #### 1-4.環境構築
 
-'''
+```
 yarn add typescript --dev
 yarn install
 yarn tsc --init
-'''
+```
 
 #### 1-5.Reactプロジェクトの作成
 
-'''
+```
 mkdir React
 cd React
 npx create-react-app hello-react
-'''
+```
 
 #### 1-6.Reactプロジェクトの開始
 
-'''
+```
 cd /React/hello-react
 yarn start
-'''
+```
 
 ## 2.JSX
 
@@ -62,3 +62,30 @@ yarn start
 
 - /React/hello-react/src/App.jsの修正でホットリロードが効かない場合
 
+  ```
+  yarn add react-app-rewired
+  ```
+
+  - 上記を実行後、package.jsonのscriptsセクションを修正
+
+    ```
+    {
+    "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts 1 eject"
+    }
+    }
+    ```
+
+  - ルートディレクトリにconfig-overrides.jsを作成
+    ```
+    // config-overrides.js
+    module.exports = function override(config, env) {
+    config.watchOptions = {
+      poll: true,
+    };
+    return config;
+    };
+    ```

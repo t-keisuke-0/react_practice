@@ -45,8 +45,11 @@
       }
     }
   },
+  "remoteEnv": {
+    "CHOKIDAR_USEPOLLING": "true"
+  },
   "forwardPorts": [3000],
-  "workspaceMount": "source=${localWorkspaceFolder},target=/playground,type=bind,consistency=cached",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/playground,type=bind,consistency=delegated", // ホストOSのファイルシステムの変更を優先することでコンテナとの整合性を取る
   "workspaceFolder": "/playground",
   "remoteUser": "devuser"
 }
