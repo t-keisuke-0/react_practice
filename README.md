@@ -69,13 +69,11 @@ yarn start
   - 上記を実行後、package.jsonのscriptsセクションを修正
 
     ```
-    {
     "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts 1 eject"
-    }
+      "start": "react-app-rewired start",
+      "build": "react-app-rewired build",
+      "test": "react-app-rewired test",
+      "eject": "react-scripts eject"
     }
     ```
 
@@ -83,9 +81,9 @@ yarn start
     ```
     // config-overrides.js
     module.exports = function override(config, env) {
-    config.watchOptions = {
-      poll: true,
-    };
-    return config;
+      config.watchOptions = {
+        poll: true,
+      };
+      return config;
     };
     ```
