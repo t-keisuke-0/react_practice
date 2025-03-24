@@ -59,31 +59,63 @@ yarn start
 - Facebook社が開発したJavaScriptの拡張構文
 - jsファイル上で、ほぼHTMLと同じ記述が出来る
 - Reactを使う上で必須ではないが、ReactでSPAつくるなら使うと便利（直感的にも理解しやすい。jsでもできるが非推奨）
+- jsでも同様の機能実装ができるが見にくい
 
-- /React/hello-react/src/App.jsの修正でホットリロードが効かない場合
+  - JSXの場合
 
   ```
-  yarn add react-app-rewired
+    <div className="App">
+      <p>helloworld</p>
+    </div>
   ```
 
-  - 上記を実行後、package.jsonのscriptsセクションを修正
+  - JSの場合
 
-    ```
-    "scripts": {
-      "start": "react-app-rewired start",
-      "build": "react-app-rewired build",
-      "test": "react-app-rewired test",
-      "eject": "react-scripts eject"
-    }
-    ```
+  ```
+    React.createElement(
+      'div',
+      {
+        className: 'App',
+      },
+      React.createElement('p', null, 'helloworld'),
+    )
+  ```
 
-  - ルートディレクトリにconfig-overrides.jsを作成
-    ```
-    // config-overrides.js
-    module.exports = function override(config, env) {
-      config.watchOptions = {
-        poll: true,
-      };
-      return config;
-    };
-    ```
+## 3.Component
+
+#### 3.Componentとは
+
+- 再利用可能なUI部品
+  - UI(User Interface)
+    - ユーザとサービスの接触面
+    - Webサービスにおいてユーザの目に触れる部分
+    - 具体例
+      - ボタン
+      - 入力フォーム
+      - 検索結果一覧
+- メリット
+  - 部品化することで様々なところで再利用できる
+- Class Component
+- state
+- props
+- lifecycle
+- などの状態を付加できる
+- Functional Component
+  - props
+  - 余計な情報を付加させない
+  - Hooks
+    - state
+    - lifecycle
+    - 最近はHooksをつかったFunctional Componentsが主流
+- 実際にコーディングしてみよう！
+  - hello-reactプロジェクトを開く
+  - セットアップ
+    - デフォルトのファイルを削除
+    - index.jsの作成
+    - App.jsの作成
+  - semantic-uiの導入
+    - CSSフレームワーク
+    - 指定されたクラス名を記述
+    - CSSを記述せずに綺麗なUIを作成できる
+    - semantic ui cdn
+  - Button.jsの作成
